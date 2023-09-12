@@ -65,13 +65,22 @@ body {
   background-image: url(assets/slide5.jpg);
 }
 
+.slider_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 .pagination {
   display: flex;
-  margin-top: 2rem;
+  justify-content: end;
+  order: 2;
 }
 
 .meme_description {
   display: flex;
+  order: 1;
 }
 
 .hidden {
@@ -105,5 +114,15 @@ body {
   }
   .slide {
     width: 28rem;
+  }
+  .slider_content {
+    display: inline-block;
+    width: 100%;
+  }
+  .pagination {
+    justify-content: center;
+  }
+  .meme_description {
+    margin-top: 2rem;
   }
 }
