@@ -14,11 +14,11 @@ body {
 
 .slider {
   max-width: 60rem;
-  max-height: 100%;
+  max-height: 100vh;
   overflow: hidden;
   box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
   border-radius: 1.5rem;
-  margin: 5% auto;
+  margin: 4% auto;
 }
 
 .slider_wrapper {
@@ -44,7 +44,7 @@ body {
     background-size: contain;
     opacity: 0;
     z-index: 0;
-    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    transition: opacity ease-in-out .5s, transform ease-in-out .5s;
 }
 
 .slide1 {
@@ -70,8 +70,9 @@ body {
 
 .meme_description {
   display: flex;
-  order: 1;
-  margin: 2rem 0;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 1%;
 }
 
 .text {
@@ -83,7 +84,6 @@ body {
 }
 
 .labels {
-  margin-top: 2rem;
   /*display: flex;
   justify-content: end;
   order: 2;*/
@@ -93,8 +93,8 @@ body {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  border: 0.2rem solid rgba(17, 1, 241, 1);
-  background: rgba(17, 1, 241, 1);
+  border: 0.2rem solid rgb(34, 201, 223);
+  background: rgba(34, 201, 223, 1);
   display: inline-block;
   margin: 0.8rem;
   cursor: pointer;
@@ -102,16 +102,16 @@ body {
 }
 
 label:hover {
-  background: rgb(81, 70, 241);
-  border: 0.2rem solid rgb(81, 70, 241);
+  background: rgb(101, 219, 235);
+  border: 0.2rem solid rgb(101, 219, 235);
 }
-#radio1:checked ~ .labels label:nth-of-type(1),
-#radio2:checked ~ .labels label:nth-of-type(2),
-#radio3:checked ~ .labels label:nth-of-type(3),
-#radio4:checked ~ .labels label:nth-of-type(4),
-#radio5:checked ~ .labels label:nth-of-type(5) {
+#radio1:checked ~ .meme_description>.labels label:nth-of-type(1),
+#radio2:checked ~ .meme_description>.labels label:nth-of-type(2),
+#radio3:checked ~ .meme_description>.labels label:nth-of-type(3),
+#radio4:checked ~ .meme_description>.labels label:nth-of-type(4),
+#radio5:checked ~ .meme_description>.labels label:nth-of-type(5) {
 	
-  background: rgba(17, 1, 241, 0);
+  background: rgba(34, 201, 223, 0);
 }
 
 #radio1:checked ~ .slides > .slide1 {
@@ -188,5 +188,10 @@ label:hover {
   .labels {
     display: flex;
     justify-content: center;
+  }
+  .meme_description {
+    flex-direction: column-reverse;
+    align-items: normal;
+    gap: 2rem;
   }
 }
