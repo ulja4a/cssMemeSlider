@@ -41,7 +41,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0;
-    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+    transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
 }
 
 .slide1 {
@@ -73,9 +73,12 @@ body {
 }
 
 .text {
-  display: none;
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
   opacity: 0;
-  transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+  transition: opacity ease-in-out 1s;
+  transform: translateX(0);
 }
 
 .radio_input {
@@ -92,6 +95,11 @@ body {
   margin: 0.8rem;
   cursor: pointer;
   transition: 0.5s;
+}
+
+.labels {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .custom_label {
@@ -121,7 +129,10 @@ label:hover {
 }
 #radio1:checked ~ .meme_description > .text1 {
   opacity: 1;
-  display: inline-block;
+  visibility: visible;
+  overflow: visible;
+  transform: translateX(0);
+  width: 100%;
 }
 #radio2:checked ~ .slides > .slide2 {
   transform: translateX(-100%);
@@ -129,7 +140,10 @@ label:hover {
 }
 #radio2:checked ~ .meme_description > .text2 {
   opacity: 1;
-  display: inline-block;
+  visibility: visible;
+  overflow: visible;
+  transform: translateX(0);
+  width: 100%;
 }
 #radio3:checked ~ .slides > .slide3 {
   transform: translateX(-200%);
@@ -137,7 +151,10 @@ label:hover {
 }
 #radio3:checked ~ .meme_description > .text3 {
   opacity: 1;
-  display: inline-block;
+  visibility: visible;
+  overflow: visible;
+  transform: translateX(0);
+  width: 100%;
 }
 #radio4:checked ~ .slides > .slide4 {
   transform: translateX(-300%);
@@ -145,7 +162,10 @@ label:hover {
 }
 #radio4:checked ~ .meme_description > .text4 {
   opacity: 1;
-  display: inline-block;
+  visibility: visible;
+  overflow: visible;
+  transform: translateX(0);
+  width: 100%;
 }
 #radio5:checked ~ .slides > .slide5 {
 	transform: translateX(-400%);
@@ -153,7 +173,10 @@ label:hover {
 }
 #radio5:checked ~ .meme_description > .text5 {
   opacity: 1;
-  display: inline-block;
+  visibility: visible;
+  overflow: visible;
+  transform: translateX(0);
+  width: 100%;
 }
 
 
@@ -189,11 +212,11 @@ label:hover {
   .labels {
     display: flex;
     justify-content: center;
+    margin-bottom: 2rem;
   }
   .meme_description {
     flex-direction: column-reverse;
     align-items: normal;
-    gap: 2rem;
   }
   .custom_label {
     display: block;
@@ -201,5 +224,20 @@ label:hover {
     margin-top: -80%;
     width: 3rem;
     height: 3rem;
+  }
+  .text {
+    height: 0;
+    transform: translateY(0);
+
+  }
+  #radio1:checked ~ .meme_description > .text1 {
+    height: 100%;
+    transform: translateY(0);
+  }
+  #radio2:checked ~ .meme_description > .text2,
+  #radio3:checked ~ .meme_description > .text3,
+  #radio4:checked ~ .meme_description > .text4,
+  #radio5:checked ~ .meme_description > .text5 {
+    margin-bottom: 2rem;
   }
 }
