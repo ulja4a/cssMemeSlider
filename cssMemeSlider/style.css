@@ -111,8 +111,11 @@ body {
 }
 
 label:hover {
-  background: rgb(135, 226, 238);
-  border: 0.2rem solid rgb(135, 226, 238);
+  background: rgb(89, 59, 136);
+  border: 0.2rem solid rgb(89, 59, 136);
+}
+label:active {
+  opacity: 0.5;
 }
 #radio1:checked ~ .meme_description>.labels label:nth-of-type(1),
 #radio2:checked ~ .meme_description>.labels label:nth-of-type(2),
